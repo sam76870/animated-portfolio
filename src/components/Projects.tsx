@@ -130,29 +130,8 @@ const ProjectCard: React.FC<{ project: typeof PROJECTS[number]; index: number; i
         </div>
 
         {/* Links */}
-        <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
-          {project.link && (
-            <motion.a
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
-              whileHover={{ x: 3 }}
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.78rem',
-                color: project.accent,
-                textDecoration: 'none',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.3rem',
-                transition: 'opacity 0.2s',
-              }}
-              data-cursor="pointer"
-            >
-              Live Demo ↗
-            </motion.a>
-          )}
-          {project.github && (
+        {project.github && (
+          <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
             <motion.a
               href={project.github}
               target="_blank"
@@ -171,8 +150,8 @@ const ProjectCard: React.FC<{ project: typeof PROJECTS[number]; index: number; i
             >
               GitHub ⌥
             </motion.a>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </motion.div>
   );
